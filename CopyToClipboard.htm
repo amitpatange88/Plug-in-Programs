@@ -1,0 +1,37 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Copy to Clipboard with javascript</title>
+    <script type="text/javascript">
+    	function f1() {
+    		var s = document.getElementById('text1').value;
+    		
+    		var div = document.createElement('div');
+    		div.innerText = '"' + s + '" copied to clipboard.';
+    		document.body.appendChild(div);
+    		
+    		if (window.clipboardData)
+    			window.clipboardData.setData('text', s);
+    		else
+    			return (s);
+    	}		
+    </script>
+</head>
+<body>
+	Enter content below and click the Copy icon below. The paste into Notepad, or something simlar to verify.
+	
+		<input type="text" name="text1" id="text1" />
+	
+	<object id='clipboard' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0' width='16' height='16' align='middle'>
+		<param name='allowScriptAccess' value='always' />
+		<param name='allowFullScreen' value='false' />
+		<param name='movie' value='http://www.rahulsingla.com/sites/default/files/content/blog/javascript_clipboard/clipboard.swf' />
+		<param name='quality' value='high' />
+		<param name='bgcolor' value='#ffffff' />
+		<param name='wmode' value='transparent' />
+		<param name='flashvars' value='callback=f1' />
+		<embed src='http://www.rahulsingla.com/sites/default/files/content/blog/javascript_clipboard/clipboard.swf' flashvars='callback=f1' quality='high' bgcolor='#ffffff' width='16' height='16' wmode='transparent' name='clipboard' align='middle' allowscriptaccess='always' allowfullscreen='false' type='application/x-shockwave-flash' pluginspage='http://www.adobe.com/go/getflashplayer' />
+	</object>
+</body>
+</html>
