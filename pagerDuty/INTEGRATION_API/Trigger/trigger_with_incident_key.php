@@ -1,4 +1,7 @@
 <?php
+/*
+@Purpose : This is for incident management work. Triggering pager duty service using key. Integration API.
+*/
 
 $SUBDOMAIN='pdt-dank';
 $URL = 'https://events.pagerduty.com/generic/2010-04-15/create_event.json';
